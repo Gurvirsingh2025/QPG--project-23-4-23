@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Question Paper</title>
+  <style>
+    /* CSS styles for the question paper */
+    ol {
+      list-style-type: decimal;
+      margin-left: 1em;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Question Paper</h1>
+  <!-- <center><h2>{ question_subject }</h2></center> -->
+  <ol>
+    {% for question in questions %}
+      <li>{{ question }}</li>
+    {% endfor %}
+  </ol>
+</body>
+</html>

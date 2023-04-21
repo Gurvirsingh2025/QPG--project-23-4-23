@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}
+Add Question
+{%endblock title%}
+{% block body %}
+{% load static%}
+
+<div class="container mt-3">
+    <div class="text-center">
+        <h3>Add Question Here</h3>
+    </div>
+    <div class="container ">
+        <form action="{% url 'add_questions' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="question">Add Question Here</label>
+                <input type="text" name="question" id="question" class="form-control"
+                    placeholder="Write the Question Here">
+            </div>
+            <!-- <div class="form-group">
+                <div class="form-group">
+                    <label for="question_type">Question type</label>
+                    <input type="checkbox" id="question_type" class="ml-3" name="question_type" value="question
+                    ">answers
+                    <input type="checkbox" id="question_type" class="ml-3" name="question_type" value="fill_in_blanks">fill in blanks
+                    <input type="checkbox" id="question_type" class="ml-3" name="question_type" value="true_false">true_false
+                    <input type="checkbox" id="question_type" class="ml-3" name="question_type" value="full_form">full form
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label for="question_subject">Question subject</label>
+                <input type="text" name="question_subject" id="question_subject" class="form-control"
+                    placeholder="Write Question Subject Here" >
+            </div>
+            <div class="form-group">
+                <label for="question_topic">Question topic</label>
+                <input type="text" name="question_topic" id="question_topic" class="form-control"
+                    placeholder="Write Topic of this Questions" >             
+                </div>
+
+            <div class="form-group">
+                <label for="question_difficulty">Question difficulty</label>
+                <select name="question_difficulty" id="question_difficulty" class="form-control" 
+                    aria-required="true">
+                    <option value="">Select any Value</option>
+                    <option value="remembering">remembering</option>
+                    <option value="understanding">understanding</option>
+                    <option value="evaluation">evaluation</option>
+                    <option value="creating">creating</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-info align-self-center mb-3">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <body>
+    <h1>Add Question</h1>
+    <form method="POST" action="{% url 'add_questions' %}">
+        {% csrf_token %}
+        <label for="question">Question:</label><br>
+        <textarea id="question" name="question" rows="4" cols="50"></textarea><br><br>
+        <label for="question_type">Question Type:</label><br>
+        <input type="text" id="question_type" name="question_type"><br><br>
+        <label for="question_subject">Question Subject:</label><br>
+        <input type="text" id="question_subject" name="question_subject"><br><br>
+        <label for="question_difficulty">Question Difficulty:</label><br>
+        <input type="text" id="question_difficulty" name="question_difficulty"><br><br>
+        <label for="question_marks">Question Marks:</label><br>
+        <input type="text" id="question_marks" name="question_marks"><br><br>
+        <label for="question_topic">Question Topic:</label><br>
+        <input type="text" id="question_topic" name="question_topic"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body> -->
+{% endblock body %}

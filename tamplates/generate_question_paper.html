@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block body %}
+<div class="text-center">
+  <h1>Generate Question Paper</h1>
+</div>
+<div class="container">
+    <form method="POST" action="{% url 'generate_question_paper' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="question_subject">Subject:</label>
+        <input type="text" class="form-control" id="question_subject" name="question_subject" required>
+      </div>
+      <div class="form-group">
+        <label for="question_difficulty">Question difficulty</label>
+        <select name="question_difficulty" id="question_difficulty" class="form-control" 
+            aria-required="true">
+            <option value="">Select any Value</option>
+            <option value="remembering">remembering</option>
+            <option value="understanding">understanding</option>
+            <option value="evaluation">evaluation</option>
+            <option value="creating">creating</option>
+        </select>
+    </div>
+      <!-- <div class="form-group">
+        <label for="question_topic">Topic:</label>
+        <input type="text" class="form-control" id="question_topic" name="question_topic" required>
+      </div>
+      <div class="form-group">
+        <label>Bloom's Taxonomy Levels:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="understanding" name="bloom_taxonomy[]" value="understanding">
+          <label class="form-check-label" for="understanding">Understanding</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="remembering" name="bloom_taxonomy[]" value="remembering">
+          <label class="form-check-label" for="remembering">Remembering</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="evaluation" name="bloom_taxonomy[]" value="evaluation">
+          <label class="form-check-label" for="evaluation">Evaluation</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="creating" name="bloom_taxonomy[]" value="creating">
+          <label class="form-check-label" for="creating">Creating</label>
+        </div>
+      </div> -->
+      <button type="submit" class="btn btn-primary">Generate Question Paper</button>
+    </form>
+
+{% if questions %}
+<h2>Questions:</h2>
+<ol>
+  {% for question in questions %}
+  <li>{{ question }}</li>
+  {% endfor %}
+</ol>
+{% endif %} 
+{% endblock %}
