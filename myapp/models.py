@@ -22,7 +22,7 @@ class Question(models.Model):
     question_subject = models.CharField(max_length=50)
     question_topic = models.CharField(max_length=50)
     # question_type = models.CharField(max_length=20)
-    question_difficulty = models.CharField(max_length=20) # Use ArrayField to store an array of bloom taxonomy values
+    question_levels = models.CharField(max_length=20) # Use ArrayField to store an array of bloom taxonomy values
 
 
     def __str__(self):

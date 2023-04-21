@@ -54,10 +54,10 @@ def add_questions(request):
         question = request.POST['question']
         # question_type = request.POST['question_type']
         question_subject = request.POST['question_subject']
-        question_difficulty = request.POST['question_difficulty']
+        question_levels = request.POST['question_levels']
         # question_marks = request.POST['question_marks']
         question_topic = request.POST['question_topic']
-        new_question = Question(question=question, question_subject=question_subject, question_difficulty=question_difficulty, question_topic=question_topic)
+        new_question = Question(question=question, question_subject=question_subject, question_levels=question_levels, question_topic=question_topic)
         new_question.save()
         return redirect('add_questions')
     else:
@@ -80,7 +80,7 @@ class QuestionPaperSchema(AutoSchema):
 #     # ...
 
 #     # Retrieve a set of questions from the database based on the selected criteria
-#     questions = Question.objects.filter(question_subject=subject, question_difficulty=difficulty, question_marks__gte=marks)
+#     questions = Question.objects.filter(question_subject=subject, question_levels=difficulty, question_marks__gte=marks)
 
 #     # Shuffle the questions and select the first n questions to include in the question paper
 #     shuffled_questions = list(questions)
@@ -125,7 +125,7 @@ def generate_question_paper(request):
     if request.method == 'POST':
         question_subject = request.POST['question_subject']
         # question_topic = request.POST['question_type']
-        # question_difficulty = request.POST['question_difficulty']
+        question_levels = request.POST['question_levels']
         # question_type = request.POST['question_type']
 
         # Check if there are any questions in the database for the given subject
