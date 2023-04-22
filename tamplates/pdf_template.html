@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Question Paper</title>
-  <style>
-    /* CSS styles for the question paper */
-    ol {
-      list-style-type: decimal;
-      margin-left: 1em;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 1em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Question Paper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+        }
+        h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        .question-number {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .question-text {
+            display: inline-block;
+            max-width: 90%;
+        }
+    </style>
 </head>
 <body>
-  <h1>Question Paper</h1>
-  <center><h2>{{ question_subject }}</h2></center>
-  <ol>
-    {% for question in questions %}
-      <li>{{ question }}</li>
+    <h1>Question Paper</h1>
+    <h2>Section 1</h2>
+    {% for question in section1_questions %}
+        <div class="question">
+            <span class="question-number">{{ forloop.counter }}.</span>
+            <span class="question-text">{{ question }}</span>
+        </div>
     {% endfor %}
-  </ol>
+    <h2>Section 2</h2>
+    {% for question in section2_questions %}
+        <div class="question">
+            <span class="question-number">{{ forloop.counter }}.</span>
+            <span class="question-text">{{ question }}</span>
+        </div>
+    {% endfor %}
+    <h2>Section 3</h2>
+    {% for question in section3_questions %}
+        <div class="question">
+            <span class="question-number">{{ forloop.counter }}.</span>
+            <span class="question-text">{{ question }}</span>
+        </div>
+    {% endfor %}
 </body>
 </html>

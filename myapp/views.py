@@ -129,7 +129,7 @@ def generate_question_paper(request):
         # question_type = request.POST['question_type']
 
         # Check if there are any questions in the database for the given subject
-        questions = Question.objects.filter(question_subject=question_subject)
+        questions = Question.objects.filter(question_subject=question_subject,question_levels=question_levels)
         if questions.exists():
             # Select 10 random questions from the database
             questions = random.sample(list(questions), 10)
@@ -175,27 +175,45 @@ def generate_question_paper(request):
                     question_subject=question_subject,
                     # question_type=question_type,
                     # question_topic=question_topic,
-                    # bloom_taxonomy=bloom_taxonomy  # Save the selected bloom taxonomy levels for each question
+                    question_levels=question_levels  # Save the selected bloom taxonomy levels for each question
                 )
                 new_question.save()
 
-        # Limit the number of questions to 10
-        questions = questions[:10]
+
+        # # Limit the number of questions to 10
+        # questions = questions[:10]
+
+        # Limit the number of questions to 10 for each section
+        section1_questions = questions[:3]
+        section2_questions = questions[3:6]
+        section3_questions = questions[6:9]
 
         # Render the PDF template with the questions
         template_path = 'pdf_template.html'
-        context = {'questions': questions}
+        context = {
+            'section1_questions': section1_questions,
+            'section2_questions': section2_questions,
+            'section3_questions': section3_questions
+        }
         template = get_template(template_path)
         html = template.render(context)
+
+
+        # # Render the PDF template with the questions
+        # template_path = 'pdf_template.html'
+        # context = {'questions': questions}
+        # template = get_template(template_path)
+        # html = template.render(context)
+
+
 
         # Create a PDF file from the HTML content
         pdf_file = io.BytesIO()
         pisa.CreatePDF(io.StringIO(html), pdf_file)
-        # print(f"there is the pdf_file{pdf_file}")
+
         # Return the PDF file as a response
         response = HttpResponse(pdf_file.getvalue(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline; filename="question_paper.pdf"'
-        # print(f"thare is the response{response}")
         return response
 
     return render(request, 'generate_question_paper.html')
