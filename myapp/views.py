@@ -173,7 +173,7 @@ def generate_question_paper(request):
                 new_question = Question(
                     question=question,
                     question_subject=question_subject,
-                    # question_type=question_type,
+                    question_type=question_type,
                     # question_topic=question_topic,
                     question_levels=question_levels  # Save the selected bloom taxonomy levels for each question
                 )
