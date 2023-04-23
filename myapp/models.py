@@ -21,7 +21,7 @@ class Question(models.Model):
     question = models.CharField(max_length=255)
     question_subject = models.CharField(max_length=50)
     question_topic = models.CharField(max_length=50)
-    question_type = models.CharField(max_length=20)
+    # question_type = models.CharField(max_length=20)
     question_levels = models.CharField(max_length=20) # Use ArrayField to store an array of bloom taxonomy values
 
 
