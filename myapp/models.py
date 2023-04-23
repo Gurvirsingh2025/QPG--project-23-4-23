@@ -9,8 +9,8 @@
 #     question_type=models.CharField(max_length=100)
 #     question_topic=models.CharField(max_length=100)
 #     question_subject=models.CharField(max_length=100)
-#     question_marks=models.IntegerField(1)
 #     question_difficulty=models.CharField(max_length=100)
+#     question_marks=models.IntegerField(1)
 #     question_lavel=models.CharField(max_length=100)
 
 
@@ -21,7 +21,8 @@ class Question(models.Model):
     question = models.CharField(max_length=255)
     question_subject = models.CharField(max_length=50)
     question_topic = models.CharField(max_length=50)
-    # question_type = models.CharField(max_length=20)
+    question_marks=models.IntegerField(10)
+    question_type = models.CharField(max_length=20)
     question_levels = models.CharField(max_length=20) # Use ArrayField to store an array of bloom taxonomy values
 
 

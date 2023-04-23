@@ -52,12 +52,12 @@ from django.shortcuts import render
 def add_questions(request):
     if request.method == 'POST':
         question = request.POST['question']
-        # question_type = request.POST['question_type']
+        question_type = request.POST['question_type']
         question_subject = request.POST['question_subject']
         question_levels = request.POST['question_levels']
-        # question_marks = request.POST['question_marks']
+        question_marks = request.POST['question_marks']
         question_topic = request.POST['question_topic']
-        new_question = Question(question=question, question_subject=question_subject, question_levels=question_levels, question_topic=question_topic)
+        new_question = Question(question=question, question_subject=question_subject, question_levels=question_levels, question_topic=question_topic, question_marks=question_marks, question_type=question_type)
         new_question.save()
         return redirect('add_questions')
     else:
@@ -126,7 +126,7 @@ def generate_question_paper(request):
         question_subject = request.POST['question_subject']
         # question_topic = request.POST['question_type']
         question_levels = request.POST['question_levels']
-        # question_type = request.POST['question_type']
+        question_type = request.POST['question_type']
 
         # Check if there are any questions in the database for the given subject
         questions = Question.objects.filter(question_subject=question_subject,question_levels=question_levels)
@@ -135,7 +135,7 @@ def generate_question_paper(request):
             questions = random.sample(list(questions), 10)
         else:
             # Generate a prompt for OpenAI API
-            prompt = f"Generate 10 random questions on {question_subject}."
+            prompt = f"Generate 10 random questions on {question_subject} ."
 
             # Call OpenAI API with the prompt
             response = openai.Completion.create(
