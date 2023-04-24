@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework.schemas import AutoSchema
 import random
 import openai
+from .config import API_KEY 
 
 # Create your views here.
 
@@ -59,16 +60,26 @@ def add_questions(request):
         question_topic = request.POST['question_topic']
         new_question = Question(question=question, question_subject=question_subject, question_levels=question_levels, question_topic=question_topic, question_marks=question_marks, question_type=question_type)
         new_question.save()
-        return redirect('add_questions')
+        fields = ['question_subject', 'question_type', 'question_levels', 'question_marks', 'question_topic']
+        distinct_values = {}
+        for field in fields:
+            values = Question.objects.values(field).distinct()
+            distinct_values[field] = [value[field] for value in values]
+        return render(request, 'add_questions.html', {'distinct_values': distinct_values})
     else:
-        return render(request, 'add_questions.html')
+        fields = ['question_subject', 'question_type', 'question_levels', 'question_marks', 'question_topic']
+        distinct_values = {}
+        for field in fields:
+            values = Question.objects.values(field).distinct()
+            distinct_values[field] = [value[field] for value in values]
+        return render(request, 'add_questions.html', {'distinct_values': distinct_values})
 
 
 
 
-class QuestionPaperSchema(AutoSchema):
-    def get_operation_id(self, path, method):
-        return 'generate_question_paper'
+# class QuestionPaperSchema(AutoSchema):
+#     def get_operation_id(self, path, method):
+#         return 'generate_question_paper'
 
 # @api_view(['POST'])
 # @schema(QuestionPaperSchema())
@@ -97,8 +108,7 @@ class QuestionPaperSchema(AutoSchema):
 
 
 # Authenticate OpenAI API with the API key
-my_api_keys= "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"
-openai.api_key = f"{my_api_keys}"
+openai.api_key = f"{API_KEY}"
 
 # views.py
 
@@ -111,8 +121,6 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 
 
-# Authenticate OpenAI API with the API key
-openai.api_key = "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"
 
 from django.http import HttpResponse
 from django.template.loader import get_template

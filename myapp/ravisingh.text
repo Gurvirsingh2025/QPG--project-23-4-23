@@ -24,3 +24,60 @@
         return response
 
     return render(request, 'generate_question_paper.html')
+
+
+
+
+
+
+  {% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Add Question</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="question">Question:</label>
+        <textarea class="form-control" name="question" id="question"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="question_type">Question Type:</label>
+        <select class="form-control" name="question_type" id="question_type">
+          {% for value in distinct_values.question_type %}
+            <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question_subject">Subject:</label>
+        <select class="form-control" name="question_subject" id="question_subject">
+          {% for value in distinct_values.question_subject %}
+            <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question_levels">Bloom Taxonomy Levels:</label>
+        <select class="form-control" name="question_levels" id="question_levels">
+          {% for value in distinct_values.question_levels %}
+            <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question_marks">Marks:</label>
+        <select class="form-control" name="question_marks" id="question_marks">
+          {% for value in distinct_values.question_marks %}
+            <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question_topic">Topic:</label>
+        <input class="form-control" type="text" name="question_topic" id="question_topic">
+      </div>
+      <button class="btn btn-primary" type="submit">Add Question</button>
+    </form>
+  </div>
+{% endblock %}

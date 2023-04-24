@@ -3,25 +3,51 @@
   <h1>Generate Question Paper</h1>
 </div>
 <div class="container">
-    <form method="POST" action="{% url 'generate_question_paper' %}">
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="question_subject">Subject:</label>
-        <input type="text" class="form-control" id="question_subject" name="question_subject" required>
-      </div>
-      <div class="form-group">
-        <label for="question_levels">Question levels</label>
-        <select name="question_levels" id="question_levels" class="form-control" 
-            aria-required="true">
-            <option value="">Select any Value</option>
-            <option value="remembering">remembering</option>
-            <option value="understanding">understanding</option>
-            <option value="evaluation">evaluation</option>
-            <option value="creating">creating</option>
-        </select>
+  <form method="POST" action="{% url 'generate_question_paper' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="question_subject">Subject:</label>
+      <input type="text" class="form-control" id="question_subject" name="question_subject" required>
     </div>
-      <!-- <div class="form-group">
-        <label for="question_topic">Topic:</label>
+    <div class="form-group">
+      <label for="question_topic">Question Topic</label>
+      <input type="text" name="question_topic" id="question_topic" class="form-control"
+        placeholder="Write Topic of this Questions">
+    </div>
+    <div class="form-group">
+      <label for="question_type">Question Type</label>
+      <select name="question_type" id="question_type" class="form-control" aria-required="true">
+        <option value="">Select any Value</option>
+        <option value="fill_in_blanks">Fill in Blanks</option>
+        <option value="full_form">Full Form</option>
+        <option value="true_false">True False</option>
+        <option value="definition">Definition</option>
+        <option value="very_short_question">Very Short Question</option>
+        <option value="short_question">Short Question</option>
+        <option value="long_question">Long Question</option>
+      </select>
+    </div>
+
+<div class="form-group">
+  <label for="question_marks">Question Marks</label>
+  <select name="question_marks" id="question_marks" class="form-control" aria-required="true">
+    <option value="">Select any Value</option>
+    <option value="1">1 marks</option>
+    <option value="5">5 marks</option>
+    <option value="10">10 marks</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="question_levels">Question levels</label>
+  <select name="question_levels" id="question_levels" class="form-control" aria-required="true">
+    <option value="">Select any Value</option>
+    <option value="easy">Easy</option>
+    <option value="normal">Normal</option>
+    <option value="high">High</option>
+  </select>
+</div>
+<!-- <div class="form-group">
+      <label for="question_topic">Topic:</label>
         <input type="text" class="form-control" id="question_topic" name="question_topic" required>
       </div>
       <div class="form-group">
@@ -43,8 +69,9 @@
           <label class="form-check-label" for="creating">Creating</label>
         </div>
       </div> -->
-      <button type="submit" class="btn btn-primary">Generate Question Paper</button>
-    </form>
+<button type="submit" class="btn btn-primary">Generate Question Paper</button>
+</form>
+</div>
 
 {% if questions %}
 <h2>Questions:</h2>
@@ -53,5 +80,5 @@
   <li>{{ question }}</li>
   {% endfor %}
 </ol>
-{% endif %} 
+{% endif %}
 {% endblock %}
