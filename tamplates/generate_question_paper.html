@@ -7,14 +7,31 @@
     {% csrf_token %}
     <div class="form-group">
       <label for="question_subject">Subject:</label>
-      <input type="text" class="form-control" id="question_subject" name="question_subject" required>
-    </div>
-    <div class="form-group">
+      <select class="form-control" name="question_subject" id="question_subject">
+          {% for value in distinct_values.question_subject %}
+          <option value="{{ value }}">{{ value }}</option>
+          {% endfor %}
+      </select>
+  </div>
+    <!-- <div class="form-group">
       <label for="question_topic">Question Topic</label>
       <input type="text" name="question_topic" id="question_topic" class="form-control"
         placeholder="Write Topic of this Questions">
+    </div> -->
+    <div class ="form-group">
+      {% for value in distinct_values.question_type %}
+      <input type="checkbox" id="question_type" name="question_type" value="{{ value }}">{{ value }}
+      <label for="{{ value }}">{{ value }}</label><br>
+      <!-- <option value="{{ value }}">{{ value }}</option> -->
+      {% endfor %}
     </div>
-    <div class="form-group">
+    <!-- <label for="whole">Choose the whole in save in the database:</label><br>
+    <input type="radio" id="whole" name="whole" value="option2">
+    <label for="option2">Option 2</label><br>
+    <input type="radio" id="whole" name="whole" value="option3">
+    <label for="option3">Option 3</label><br> -->
+
+    <!-- <div class="form-group">
       <label for="question_type">Question Type</label>
       <select name="question_type" id="question_type" class="form-control" aria-required="true">
         <option value="">Select any Value</option>
@@ -26,9 +43,9 @@
         <option value="short_question">Short Question</option>
         <option value="long_question">Long Question</option>
       </select>
-    </div>
+    </div> -->
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="question_marks">Question Marks</label>
   <select name="question_marks" id="question_marks" class="form-control" aria-required="true">
     <option value="">Select any Value</option>
@@ -36,7 +53,7 @@
     <option value="5">5 marks</option>
     <option value="10">10 marks</option>
   </select>
-</div>
+</div> -->
 <div class="form-group">
   <label for="question_levels">Question levels</label>
   <select name="question_levels" id="question_levels" class="form-control" aria-required="true">

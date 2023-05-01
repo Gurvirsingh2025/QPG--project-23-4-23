@@ -81,3 +81,91 @@
     </form>
   </div>
 {% endblock %}
+
+____________ is the ability of machines to perform tasks that typically require human intelligence, such as perception, reasoning, learning, and decision-making.
+The two main categories of AI are ____________ AI and ____________ AI.
+The process of training an AI model to make predictions based on input data is called ____________ learning.
+The type of machine learning where the output variable is a continuous value is called ____________ learning.
+IBM's AI system that defeated human players in the game of Jeopardy! is called ____________.
+The field of AI that focuses on developing machines that can understand, generate, and respond to human language is called ____________.
+The process of teaching a machine to perform a task by showing it examples is called ____________ learning.
+____________ is the ability of an AI system to make decisions that maximize its chances of achieving a goal, even in uncertain or changing environments.
+____________ is a measure of an AI system's ability to accurately recognize objects, people, or other things in images or videos.
+The process of training an AI system to detect and recognize human faces is called ____________ recognition.
+The field of AI that focuses on creating machines that can perform tasks that normally require human-like dexterity and physical capabilities is called ____________ robotics.
+The concept of creating machines that can think, learn, and adapt like humans is known as ____________ intelligence.
+____________ is the process of converting spoken words into text that a machine can process and understand.
+A ____________ network is a type of machine learning model that is inspired by the structure and function of the human brain.
+____________ is a programming language commonly used for developing AI applications.
+
+AI and Machine Intelligence
+Categories of AI
+Process of AI Learning
+Types of Machine Learning
+IBM's Jeopardy! AI System
+Natural Language Processing (NLP)
+Supervised Learning
+AI Decision Making
+Object Recognition
+Facial Recognition
+Robotics and Physical Capabilities
+Artificial General Intelligence (AGI)
+Speech Recognition
+Artificial Neural Networks (ANN)
+Programming Languages for AI
+
+
+AI stands for "Artificial Intelligence".
+The field of AI focuses on developing machines that can perform tasks that normally require human intelligence.
+The concept of creating machines that can think, learn, and adapt like humans is known as "artificial general intelligence".
+Machine learning is a subset of AI that focuses on teaching machines to learn from data.
+Neural networks are a type of machine learning model that is inspired by the structure and function of the human brain.
+IBM's AI system that defeated human players in the game of Jeopardy! is called "Watson".
+Computer vision is a field of AI that focuses on teaching machines to interpret and understand visual information.
+Natural Language Processing (NLP) is a field of AI that focuses on teaching machines to understand and process human language.
+
+
+
+AI stands for "Artificial Intelligence".
+The field of AI focuses on developing machines that can perform tasks that normally require human intelligence.
+The concept of creating machines that can think, learn, and adapt like humans is known as "artificial general intelligence".
+Machine learning is a subset of AI that focuses on teaching machines to learn from data.
+Neural networks are a type of machine learning model that is inspired by the structure and function of the human brain.
+IBM's AI system that defeated human players in the game of Jeopardy! is called "Watson".
+Computer vision is a field of AI that focuses on teaching machines to interpret and understand visual information.
+Natural Language Processing (NLP) is a field of AI that focuses on teaching machines to understand and process human language.
+
+
+Understanding:
+9. Supervised learning is a type of machine learning where the machine is trained on labeled data.
+Unsupervised learning is a type of machine learning where the machine is trained on unlabeled data.
+Reinforcement learning is a type of machine learning where the machine learns through trial and error.
+Deep learning is a subset of machine learning that uses neural networks with multiple layers.
+Transfer learning is a technique in machine learning where knowledge learned in one task is applied to a different but related task.
+Overfitting occurs when a machine learning model is too complex and fits the training data too closely.
+Underfitting occurs when a machine learning model is too simple and cannot capture the complexity of the data.
+
+Applying:
+Image classification is a task in computer vision where a machine is trained to recognize objects in images.
+Speech recognition is a task in NLP where a machine is trained to convert spoken words into text.
+Sentiment analysis is a task in NLP where a machine is trained to determine the sentiment of a piece of text.
+Predictive maintenance is a task in AI where machines are used to predict when maintenance is required to prevent equipment failure.
+Autonomous driving is a task in AI where machines are used to control a vehicle without human intervention.
+Robotics is a field of AI that focuses on developing machines that can perform physical tasks.
+Chatbots are AI programs that are designed to simulate human conversation.
+
+
+Analyzing:
+Bias in AI can occur when the training data is not representative of the real world.
+Explainable AI is an approach in AI where the machine learning model can explain how it arrived at its decisions.
+Anomaly detection is a task in AI where machines are used to identify data points that are significantly different from the majority of the data.
+Clustering is a task in machine learning where the machine is trained to group similar data points together.
+Decision trees are a type of machine learning model that can be used for classification and regression tasks.
+A confusion matrix is a tool used to evaluate the performance of a machine learning model.
+Evaluating:
+Precision and recall are two metrics used to evaluate the performance of a machine learning model.
+
+The F1 score is a metric that balances precision and recall in evaluating the performance of a machine learning model.
+Cross-validation is a technique used to evaluate the performance of a machine learning model on unseen data.
+Hyperparameter tuning is a technique used to optimize the performance of a machine learning model by adjusting its parameters.
+Bias-variance tradeoff is a concept in machine learning that refers to the balance between underfitting and overfitting."

@@ -1,7 +1,125 @@
 {% extends 'base.html' %}
 {% block title %}
-About Us
+About Question Paper Generator
 {%endblock title%}
 {% block body %}
 {% load static%}
+
+   
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #ebe5e5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer {
+    background-color: #0065e9;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+</style>
+
+    <main>
+        <h1>About Question Paper Generator</h1>
+        <p>Welcome to the Question Paper Generator, a software designed to help teachers and educators create fair and unbiased question papers for their students. Our software uses a database of questions and algorithms to generate unique question papers for each student, ensuring that no two students receive the same question paper.</p>
+        <h2>Our Team</h2>
+        <p>Our team of developers and designers are committed to providing the best possible experience for our users. Meet our team:</p>
+        <ul>
+            <li>Gurvir Singh - Lead Developer</li>
+            <li>Ramnik Singh - Designer</li>
+            <li>Gurleen Singh - Developer</li>
+        </ul>
+        <h2>How to Use Question Paper Generator</h2>
+        <p>To use our software, simply follow these steps:</p>
+        <ol>
+            <li>Create a question bank by adding, editing, or deleting questions as needed.</li>
+            <li>Select the subject, topic, and difficulty level for the question paper.</li>
+            <li>Click the "Generate Question Paper" button to create a unique question paper for each student.</li>
+            <li>Customize the question paper by adding or removing questions, or by changing the difficulty level.</li>
+            <li>Save the question paper to the database, along with the other information entered by the user, such as the question type, answer options, and correct answer.</li>
+        </ol>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback about our software, please don't hesitate to contact us:</p>
+        <ul>
+            <li>Email: info@questionpapergenerator.com</li>
+            <li>Phone: 555-1234</li>
+            <li>Address: bibi wala chownk bathinda</li>
+        </ul>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="https://www.facebook.com/questionpapergenerator">Facebook</a></li>
+            <li><a href="https://twitter.com/questionpapergen">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/questionpapergenerator">LinkedIn</a></li>
+        </ul>
+    </footer>
+
 {% endblock body %}
